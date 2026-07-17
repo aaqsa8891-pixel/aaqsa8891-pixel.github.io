@@ -33,7 +33,6 @@
   h1,h2,h3{font-family:'Fraunces', serif; font-weight:700; letter-spacing:-0.01em;}
   .mono{font-family:'IBM Plex Mono', monospace;}
 
-  /* ===== NAV ===== */
   header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
   nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1100px; margin:0 auto;}
   .logo{font-family:'Fraunces', serif; font-weight:700; font-size:1.2rem;}
@@ -46,7 +45,6 @@
   .nav-toggle span::before{position:absolute; top:-7px;}
   .nav-toggle span::after{position:absolute; top:7px;}
 
-  /* ===== HERO ===== */
   .hero{
     position:relative; padding:120px 0 110px;
     background:linear-gradient(120deg, var(--violet-dark) 0%, var(--violet) 55%, var(--coral) 100%);
@@ -84,11 +82,8 @@
   .id-card{
     background:#fff; border-radius:20px; padding:30px 28px; color:var(--ink);
     box-shadow:0 30px 60px -18px rgba(30,21,51,0.55);
-    transform:rotate(1.2deg);
-    transition:transform .3s ease;
     margin:6px;
   }
-  .id-card:hover{transform:rotate(0deg) translateY(-2px);}
   .id-head{display:flex; align-items:center; gap:14px; margin-bottom:20px;}
   .monogram{
     width:56px; height:56px; border-radius:16px; background:linear-gradient(135deg, var(--coral), var(--gold));
@@ -106,14 +101,12 @@
   .id-row .v.coral{color:var(--coral);}
   .id-row .v.teal{color:var(--teal);}
 
-  /* ===== SECTION shared ===== */
   section{padding:90px 0;}
   .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:16px;}
   .sec-num{font-family:'IBM Plex Mono', monospace; font-size:0.85rem; padding:5px 12px; border-radius:20px; color:#fff;}
   .sec-head h2{font-size:2rem;}
   .sec-sub{color:var(--ink-soft); max-width:62ch; margin-bottom:44px; font-size:0.98rem;}
 
-  /* ===== ABOUT ===== */
   .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
   .about-grid p{color:var(--ink-soft); margin-bottom:16px;}
   .fact{display:flex; gap:16px; padding:18px; border-radius:16px; margin-bottom:14px;}
@@ -121,7 +114,6 @@
   .fact strong{display:block; font-size:0.96rem;}
   .fact span{color:var(--ink-soft); font-size:0.87rem;}
 
-  /* ===== SKILLS ===== */
   #skills{background:var(--tint);}
   .skill-cols{display:grid; grid-template-columns:repeat(4, 1fr); gap:18px;}
   .skill-col{background:#fff; padding:26px 22px; border-radius:16px; border-top:5px solid; box-shadow:0 12px 28px -18px rgba(30,21,51,0.35);}
@@ -129,7 +121,6 @@
   .skill-col ul{list-style:none;}
   .skill-col li{font-size:0.92rem; padding:7px 0; color:var(--ink);}
 
-  /* ===== PROJECTS ===== */
   .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
   .proj-card{
     background:#fff; border-radius:18px; padding:26px; text-decoration:none; color:inherit;
@@ -145,7 +136,6 @@
   .tag{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; padding:5px 11px; border-radius:20px; color:#fff; font-weight:500;}
   .proj-arrow{font-size:1.2rem; color:var(--ink-faint);}
 
-  /* ===== EXPERIENCE ===== */
   .timeline{position:relative; padding-left:36px;}
   .timeline::before{content:''; position:absolute; left:9px; top:6px; bottom:6px; width:3px; background:linear-gradient(var(--violet), var(--coral), var(--gold)); border-radius:4px;}
   .tl-item{position:relative; padding-bottom:42px;}
@@ -155,7 +145,6 @@
   .tl-meta{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; margin:5px 0 8px; font-weight:600;}
   .tl-desc{color:var(--ink-soft); font-size:0.92rem; max-width:58ch;}
 
-  /* ===== EDUCATION + CERTS ===== */
   #education{background:var(--tint);}
   .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
   .edu-item{background:#fff; padding:18px 20px; border-radius:14px; margin-bottom:14px; border-left:4px solid var(--violet);}
@@ -164,7 +153,6 @@
   .edu-item .sub{color:var(--ink-soft); font-size:0.9rem; margin-top:2px;}
   .edu-item .yr{font-family:'IBM Plex Mono', monospace; color:var(--ink-faint); font-size:0.78rem; margin-top:6px; display:block;}
 
-  /* ===== CONTACT / FOOTER ===== */
   #contact{
     text-align:center; padding:100px 0 70px; color:#fff; position:relative; overflow:hidden;
     background:linear-gradient(135deg, var(--coral) 0%, var(--violet) 55%, var(--violet-dark) 100%);
@@ -179,7 +167,6 @@
     .navlinks.open{display:flex;}
     .nav-toggle{display:block;}
     .hero-inner{grid-template-columns:1fr;}
-    .id-card{transform:rotate(0);}
     .about-grid{grid-template-columns:1fr; gap:36px;}
     .skill-cols{grid-template-columns:1fr 1fr;}
     .proj-grid{grid-template-columns:1fr;}
@@ -420,7 +407,6 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- Particle network background (hero) ----
   const canvas = document.getElementById('particles');
   if (canvas && !reduceMotion) {
     const ctx = canvas.getContext('2d');
@@ -469,7 +455,6 @@
     window.addEventListener('resize', () => { resize(); initParticles(); });
   }
 
-  // ---- Cursor glow ----
   const glow = document.getElementById('cursorGlow');
   if (glow && !reduceMotion && window.matchMedia('(hover:hover)').matches) {
     window.addEventListener('mousemove', (e) => {
@@ -479,7 +464,6 @@
     document.addEventListener('mouseleave', () => glow.style.opacity = 0);
   }
 
-  // ---- Scroll reveal ----
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
     const io = new IntersectionObserver((entries) => {
@@ -495,7 +479,6 @@
     revealEls.forEach(el => el.classList.add('in'));
   }
 
-  // ---- 3D tilt on project cards ----
   if (!reduceMotion && window.matchMedia('(hover:hover)').matches) {
     document.querySelectorAll('.tilt-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
